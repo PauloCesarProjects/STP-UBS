@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Crie uma Conta - STP-UBS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">STP-UBS</div>
+  </header>
+
+  <aside class="sidebar">
+    <ul>
+      <li><a href="index.html">🏠 Início</a></li>
+      <li><a href="criar-conta.html" class="active">📝 Crie uma Conta</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <section class="content">
+      <h2>Crie uma Conta</h2>
+      <p>Preencha os dados abaixo para criar sua conta no STP-UBS.</p>
+
+      <form class="signup-form">
+        <label for="nome">Nome completo:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required>
+
+        <label for="registro">CRM ou COREM:</label>
+        <input type="text" id="registro" name="registro" placeholder="Digite seu número de registro" required>
+
+        <button type="submit" class="login-btn">Criar Conta</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
