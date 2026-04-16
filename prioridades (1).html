@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Prioridades - STP-UBS</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    
+  </style>
 </head>
 <body>
   <header>
@@ -13,8 +16,8 @@
   <aside class="sidebar">
     <ul>
       <li><a href="index.html">🏠 Início</a></li>
-      <li><a href="adicionarpaciente.html">👤Adicionar Paciente</a></li>
-      <li><a href="prioridades (1).html" class="active">🏥 Prioridades</a></li>
+      <li><a href="adicionarpaciente.html">👤 Adicionar Paciente</a></li>
+      <li><a href="prioridades.html" class="active">🏥 Prioridades</a></li>
       <li><a href="fale.html">💬 Fale com STP-UBS</a></li>
       <li><a href="sobre.html">ℹ️ Sobre o SUS</a></li>
     </ul>
@@ -22,30 +25,16 @@
 
   <main>
     <section class="content">
-      <h2>Classificação de Prioridade</h2>
-      <p>Preencha os dados para definir a prioridade do paciente.</p>
+      <h2>Lista de Pacientes e Prioridades</h2>
+      <p>Clique em um paciente para ver a ficha completa. Você também pode excluir pacientes da lista.</p>
 
-      <form class="signup-form">
+      <!-- Lista dinâmica -->
+      <ul id="listaPacientes"></ul>
 
-        <label>Nome do paciente:</label>
-        <input type="text" id="nome" required>
-
-        <label>Endereço:</label>
-        <input type="text" id="endereco" required>
-
-        <label>Sintomas:</label>
-        <input type="text" id="sintomas" placeholder="Digite o sintoma" required>
-
-        <label>Observações:</label>
-        <textarea id="obs" rows="3" placeholder="Detalhes adicionais..."></textarea>
-
-        <button type="submit" class="login-btn">Classificar</button>
-      </form>
-
-      <div id="resultado" style="margin-top:20px;"></div>
-
+      <!-- Área para mostrar ficha completa -->
+      <div id="fichaPaciente"></div>
     </section>
   </main>
-
+  <script src="prioridadesScript.js"></script>
 </body>
 </html>
