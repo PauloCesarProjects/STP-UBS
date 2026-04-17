@@ -206,6 +206,47 @@ a {
   text-decoration: none;
 }
 
+/* Estilo geral do select */
+#prioridade {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #fff; /* fundo branco */
+  transition: border-color 0.3s;
+}
+
+#prioridade:focus {
+  border-color: #004aad;
+  outline: none;
+}
+
+/* Apenas cor do texto para cada prioridade */
+#prioridade option[value="vermelho"] {
+  color: #c62828; /* vermelho urgente */
+}
+
+#prioridade option[value="laranja"] {
+  color: #ef6c00; /* laranja */
+}
+
+#prioridade option[value="amarelo"] {
+  color: #fbc02d; /* amarelo */
+}
+
+#prioridade option[value="verde"] {
+  color: #2e7d32; /* verde */
+}
+
+#prioridade option[value="azul"] {
+  color: #1565c0; /* azul */
+}
+
+
+
+
 /* ANIMAÇÃO */
 @keyframes fadeIn {
   from {

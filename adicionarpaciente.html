@@ -13,8 +13,9 @@
   <aside class="sidebar">
     <ul>
       <li><a href="index.html">🏠 Início</a></li>
-      <li><a href="adicionarpaciente.html" class="active">👤Adicionar Paciente</a></li>
-      <li><a href="prioridades (1).html">🏥 Prioridades</a></li>
+      <li><a href="adicionarpaciente.html" class="active">👤 Adicionar Paciente</a></li>
+      <li><a href="prioridades.html">🏥 Prioridades</a></li>
+      <li><a href="mapaPrioridade.html" >🗺️ Mapa de Calor</a></li>
       <li><a href="fale.html">💬 Fale com STP-UBS</a></li>
       <li><a href="sobre.html">ℹ️ Sobre o STP-UBS</a></li>
     </ul>
@@ -44,6 +45,17 @@
         <!-- Campo de sintomas -->
         <label for="sintomas">Sintomas:</label>
         <textarea id="sintomas" name="sintomas" placeholder="Descreva os sintomas do paciente" rows="4"></textarea>
+
+        <!-- Campo de prioridade -->
+        <label for="prioridade">Prioridade:</label>
+        <select id="prioridade" name="prioridade" required>
+          <option value="">Selecione...</option>
+          <option value="vermelho">🔴 Vermelho - Emergência</option>
+          <option value="laranja">🟠 Laranja - Muito urgente</option>
+          <option value="amarelo">🟡 Amarelo - Urgente</option>
+          <option value="verde">🟢 Verde - Pouco urgente</option>
+          <option value="azul">🔵 Azul - Não urgente</option>
+        </select>
 
         <button type="submit" class="login-btn">Cadastrar Paciente</button>
       </form>

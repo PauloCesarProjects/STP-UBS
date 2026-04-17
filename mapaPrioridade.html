@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa de Calor - STP-UBS</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">STP-UBS</div>
+  </header>
+
+  <aside class="sidebar">
+    <ul>
+      <li><a href="index.html">🏠 Início</a></li>
+      <li><a href="adicionarpaciente.html">👤 Adicionar Paciente</a></li>
+      <li><a href="prioridades.html">🏥 Prioridades</a></li>
+      <li><a href="mapaPrioridade.html" class="active">🗺️ Mapa de Calor</a></li>
+      <li><a href="fale.html">💬 Fale com STP-UBS</a></li>
+      <li><a href="sobre.html">ℹ️ Sobre o STP-UBS</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <section class="content">
+      <h2>Mapa de Calor - Caratinga</h2>
+      <p>Visualize os pacientes cadastrados no mapa da cidade, com pontos coloridos de acordo com a prioridade.</p>
+      <div id="map" style="height: 600px; width: 100%; border-radius: 8px; border: 1px solid #ccc;"></div>
+    </section>
+  </main>
+
+<script src="mapaPrioridades.js"></script>
+</body>
+</html>
