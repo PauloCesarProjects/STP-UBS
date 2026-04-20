@@ -1,40 +1,52 @@
 <!DOCTYPE html>
+<!-- Declara o documento como HTML5 -->
 <html lang="pt-BR">
 <head>
+  <!-- Metadados da página -->
   <meta charset="UTF-8">
   <title>Crie uma Conta - STP-UBS</title>
+  <!-- Estilos gerais do site -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Cabeçalho com o título do sistema -->
   <header>
     <div class="logo">STP-UBS</div>
   </header>
 
+  <!-- Menu lateral para navegação -->
   <aside class="sidebar">
     <ul>
-      <li><a href="index.html">🏠 Início</a></li>
-      <li><a href="criar-conta.html" class="active">📝 Crie uma Conta</a></li>
+      <li><a href="index.html"><img src="icones/inicio.jpeg" alt="Ícone Início" class="icon"> Início</a></li>
+      <li><a href="criar-conta.html" class="active"><img src="icones/sobre.jpeg" alt="Ícone Crie uma Conta" class="icon"> Crie uma Conta</a></li>
     </ul>
   </aside>
 
+  <!-- Conteúdo principal da página de criação de conta -->
   <main>
     <section class="content">
       <h2>Crie uma Conta</h2>
       <p>Preencha os dados abaixo para criar sua conta no STP-UBS.</p>
 
+      <!-- Formulário de criação de conta -->
       <form class="signup-form">
+        <!-- Campo de nome completo -->
         <label for="nome">Nome completo:</label>
         <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
 
+        <!-- Campo de e-mail -->
         <label for="email">E-mail:</label>
         <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
 
+        <!-- Campo de senha -->
         <label for="senha">Senha:</label>
         <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required>
 
+        <!-- Campo de registro profissional (CRM ou COREM) -->
         <label for="registro">CRM ou COREM:</label>
         <input type="text" id="registro" name="registro" placeholder="Digite seu número de registro" required>
 
+        <!-- Botão de envio do formulário -->
         <button type="submit" class="login-btn">Criar Conta</button>
       </form>
     </section>

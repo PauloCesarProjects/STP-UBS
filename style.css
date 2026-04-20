@@ -18,13 +18,24 @@ header {
 /* SIDEBAR */
 .sidebar {
   width: 230px;
-  background: #ffffff;
+  background: #f9fbff; /* tom claro */
   position: fixed;
   top: 70px;
   bottom: 0;
   padding: 25px 20px;
   box-shadow: 4px 0 20px rgba(0,0,0,0.05);
 }
+
+.sidebar a {
+  text-decoration: none;
+  color: white; /* texto branco */
+  font-weight: 600;
+  padding: 12px;
+  display: block;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
 
 .sidebar ul {
   list-style: none;
@@ -244,7 +255,83 @@ a {
   color: #1565c0; /* azul */
 }
 
+.sidebar ul li a img.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
 
+.apps .card {
+  display: flex;
+  flex-direction: column; /* coloca imagem em cima e texto embaixo */
+  align-items: center;    /* centraliza no eixo horizontal */
+  text-decoration: none;  /* remove sublinhado */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 150px;           /* ajuste conforme necessário */
+  margin: 20px;
+}
+
+.apps .card img.icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 8px;     /* espaço entre imagem e texto */
+}
+
+.apps .card span {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Logo no header */
+.logo-img {
+  height: 50px;   /* ajuste conforme necessário */
+}
+
+/* Card horizontal (imagem à esquerda, texto à direita) */
+.card-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.card-horizontal img.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.card-horizontal span {
+  font-size: 16px;
+  color: #333;
+}
+
+.card-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;            /* força o texto a ficar branco */
+}
+
+.card-horizontal img.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.card-horizontal span {
+  font-size: 16px;
+  color: white;            /* garante que o texto dentro do span também fique branco */
+}
 
 
 /* ANIMAÇÃO */

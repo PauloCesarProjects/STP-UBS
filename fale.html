@@ -1,42 +1,52 @@
 <!DOCTYPE html>
+<!-- Declara o documento como HTML5 -->
 <html lang="pt-BR">
 <head>
+  <!-- Metadados da página -->
   <meta charset="UTF-8">
   <title>Fale com o STP-UBS</title>
+  <!-- Estilos gerais do site -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Cabeçalho com o título da página -->
   <header>
     <div class="logo">Fale com o STP-UBS</div>
   </header>
 
+  <!-- Menu lateral para navegação entre páginas -->
   <aside class="sidebar">
     <ul>
       <li><a href="index.html">🏠 Início</a></li>
       <li><a href="adicionarpaciente.html">👤Adicionar Paciente</a></li>
       <li><a href="prioridades.html">🏥 Prioridades</a></li>
-      <li><a href="mapaPrioridade.html" >🗺️ Mapa de Calor</a></li>
+      <li><a href="mapaPrioridade.html">🗺️ Mapa de Calor</a></li>
       <li><a href="fale.html" class="active">💬 Fale com STP-UBS</a></li>
-      <li><a href="sobre.html">ℹ️ Sobre o SUS</a></li>
-      
+      <li><a href="sobre.html" >ℹ️ Sobre o STP-UBS</a></li>
     </ul>
   </aside>
 
+  <!-- Conteúdo principal da página de contato -->
   <main>
     <section class="content">
       <h2>Fale com o STP-UBS</h2>
       <p>Use o formulário abaixo para enviar suas dúvidas, sugestões ou solicitações de suporte.</p>
 
+      <!-- Formulário de contato -->
       <form class="contact-form">
+        <!-- Campo de nome -->
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
 
+        <!-- Campo de e-mail -->
         <label for="email">E-mail:</label>
         <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
 
+        <!-- Campo de mensagem -->
         <label for="mensagem">Mensagem:</label>
         <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem" required></textarea>
 
+        <!-- Botão de envio do formulário -->
         <button type="submit" class="login-btn">Enviar</button>
       </form>
     </section>

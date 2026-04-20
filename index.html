@@ -1,35 +1,71 @@
 <!DOCTYPE html>
+<!-- Declara o tipo de documento HTML5 -->
 <html lang="pt-BR">
 <head>
+  <!-- Metadados da página -->
   <meta charset="UTF-8">
   <title>STP-UBS</title>
+  <!-- Link para o arquivo de estilo CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <!-- Cabeçalho com logo / título do sistema -->
+  <header class="header"  >
     <div class="logo">STP-UBS</div>
   </header>
 
+  <!-- Barra lateral de navegação -->
   <aside class="sidebar">
     <ul>
-      <li><a href="#" class="active">🏠 Início</a></li>
+      <li>
+        <a href="index.html" class="active">🏠 Início</a>
+      </li>
     </ul>
   </aside>
 
+  <!-- Conteúdo principal da página -->
   <main>
+    <!-- Seção de boas-vindas e chamada para ação -->
     <section class="welcome">
       <h2>Olá, Usuário!</h2>
       <p>Crie sua conta para acessar todas as aplicações do novo STP-UBS.</p>
-      <a href="criarConta.html" class="login-btn">Criar conta</a>    
+      <a href="criarConta.html" class="login-btn">Criar conta</a>
     </section>
 
+    <!-- Seção de cartões para acessar cada funcionalidade -->
     <section class="apps">
-      <a class="card" href="adicionarpaciente.html">👤  Adicionar paciente</a>
-      <a class="card" href="prioridades.html">🏥  prioridades</a>
-      <a class="card" href="mapaPrioridade.html">📄 Mapa de prioridades</a>
-      <a href="fale.html" class="card">💬 Fale com o STP-UBS</a>
-      <a href="sobre.html" class="card">ℹ️ Sobre o STP-UBS</a>
+      <!-- Cartão 1: adicionar paciente -->
+      <a class="card" href="adicionarpaciente.html">
+        <img src="icones/adicionarP.jpeg" alt="Adicionar paciente" class="icon" width="64px" height="64px">
+        <span>Adicionar paciente</span>
+      </a>
+
+
+        <!-- Cartão 2: prioridades -->
+      <a class="card" href="prioridades.html">
+        <img src="icones/preferencia.jpeg" alt="Prioridades" class="icon" width="64px" height="64px">
+        <span>Prioridades</span>
+      </a>
+
+      <!-- Cartão 3: mapa de prioridades -->
+      <a class="card" href="mapaPrioridade.html">
+        <img src="icones/mapa.jpeg" alt="Mapa de prioridades" class="icon" width="64px" height="64px">
+        <span>Mapa de prioridades</span>
+      </a>
+
+      <!-- Cartão 4: fale com o STP-UBS -->
+      <a href="fale.html" class="card">
+        <img src="icones/suporte.jpeg" alt="Fale com o STP-UBS" class="icon" width="64px" height="64px">
+        <span>Fale com o STP-UBS</span>
+      </a>
+
+      <!-- Cartão 5: página sobre o sistema -->
+      <a href="sobre.html" class="card">
+        <img src="icones/sobre.jpeg" alt="Sobre o STP-UBS" class="icon" width="64px" height="64px">
+        <span>Sobre o STP-UBS</span>
+      </a>
     </section>
+
   </main>
 </body>
 </html>

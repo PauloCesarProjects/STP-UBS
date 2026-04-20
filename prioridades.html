@@ -1,41 +1,50 @@
 <!DOCTYPE html>
+<!-- Declara o documento como HTML5 -->
 <html lang="pt-BR">
 <head>
+  <!-- Metadados da página -->
   <meta charset="UTF-8">
   <title>Prioridades - STP-UBS</title>
+  <!-- Estilos gerais do site -->
   <link rel="stylesheet" href="style.css">
+  <!-- Estilos adicionais específicos da página (atualmente vazio) -->
   <style>
-    
+
   </style>
 </head>
 <body>
+  <!-- Cabeçalho com o título do sistema -->
   <header>
     <div class="logo">STP-UBS</div>
   </header>
 
+  <!-- Menu lateral para navegação entre páginas -->
   <aside class="sidebar">
     <ul>
       <li><a href="index.html">🏠 Início</a></li>
       <li><a href="adicionarpaciente.html">👤 Adicionar Paciente</a></li>
       <li><a href="prioridades.html" class="active">🏥 Prioridades</a></li>
-      <li><a href="mapaPrioridade.html" >🗺️ Mapa de Calor</a></li>
+      <li><a href="mapaPrioridade.html">🗺️ Mapa de Calor</a></li>
       <li><a href="fale.html">💬 Fale com STP-UBS</a></li>
       <li><a href="sobre.html">ℹ️ Sobre o SUS</a></li>
     </ul>
   </aside>
 
+  <!-- Conteúdo principal da página de prioridades -->
   <main>
     <section class="content">
       <h2>Lista de Pacientes e Prioridades</h2>
       <p>Clique em um paciente para ver a ficha completa. Você também pode excluir pacientes da lista.</p>
 
-      <!-- Lista dinâmica -->
+      <!-- Lista dinâmica onde os pacientes serão exibidos -->
       <ul id="listaPacientes"></ul>
 
-      <!-- Área para mostrar ficha completa -->
+      <!-- Área para mostrar a ficha completa do paciente selecionado -->
       <div id="fichaPaciente"></div>
     </section>
   </main>
+
+  <!-- Script que controla a lista de pacientes e fichas -->
   <script src="prioridadesScript.js"></script>
 </body>
 </html>
