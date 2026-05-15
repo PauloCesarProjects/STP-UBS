@@ -73,6 +73,12 @@ if (contaForm) {
   });
 }
 
+/**
+ * Analisa o registro profissional informado pelo usuário
+ * Aceita formatos CRM, COREM e variações com estado, hífen e espaços
+ * @param {string} value - Texto do registro informado
+ * @returns {Object|null} - Objeto com tipo, valor e original quando válido
+ */
 function parseRegistro(value) {
   if (!value) return null;
   const original = value.trim();
@@ -85,6 +91,11 @@ function parseRegistro(value) {
   return null;
 }
 
+/**
+ * Valida o formato básico de e-mail
+ * @param {string} value - Endereço de e-mail a ser validado
+ * @returns {boolean} - true se o e-mail tiver formato válido
+ */
 function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }

@@ -113,6 +113,11 @@ if (!requireLogin()) {
   });
 }
 
+/**
+ * Valida o CPF do paciente antes de permitir o cadastro
+ * @param {string} cpf - CPF informado pelo usuário
+ * @returns {boolean} - true se o CPF for válido segundo as regras brasileiras
+ */
 function isValidCPF(cpf) {
   if (!cpf) return false;
   cpf = cpf.replace(/\D/g, "");

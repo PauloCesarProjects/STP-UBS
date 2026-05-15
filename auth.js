@@ -1,6 +1,10 @@
 /**
  * Autenticação local e mensagens em tela para o STP-UBS
  */
+/**
+ * Retorna os dados do usuário logado armazenados na sessão
+ * @returns {Object|null} - Objeto do usuário ou null se não estiver logado
+ */
 function getUsuarioLogado() {
   const raw = sessionStorage.getItem("usuarioLogadoSTP");
   if (!raw) return null;
@@ -12,17 +16,31 @@ function getUsuarioLogado() {
   }
 }
 
+/**
+ * Exibe uma mensagem na interface em um contêiner específico
+ * @param {string} containerId - ID do elemento onde a mensagem será mostrada
+ * @param {string} text - Texto da mensagem
+ * @param {string} type - Tipo de mensagem: info, success, error
+ */
 function showMessage(containerId, text, type = "info") {
   const container = document.getElementById(containerId);
   if (!container) return;
   container.innerHTML = `<div class="message-box ${type}">${text}</div>`;
 }
 
+/**
+ * Limpa as mensagens exibidas em um contêiner de interface
+ * @param {string} containerId - ID do elemento de mensagem
+ */
 function clearMessage(containerId) {
   const container = document.getElementById(containerId);
   if (container) container.innerHTML = "";
 }
 
+/**
+ * Atualiza o banner de autenticação com os dados do usuário logado
+ * Caso não haja usuário logado, oculta a área de status
+ */
 function renderLoginStatus() {
   const banner = document.getElementById("authBanner");
   const user = getUsuarioLogado();
@@ -35,11 +53,19 @@ function renderLoginStatus() {
   banner.textContent = `Conectado como ${user.nome} (${user.registroTipo}/${user.registroValor})`;
 }
 
+/**
+ * Encerra a sessão do usuário e redireciona para a página inicial
+ */
 function logout() {
   sessionStorage.removeItem("usuarioLogadoSTP");
   window.location.href = "index.html";
 }
 
+/**
+ * Renderiza a área de boas-vindas na página inicial
+ * Inclui botão de logout quando o usuário está autenticado
+ * @param {string} containerId - ID do elemento que receberá o conteúdo
+ */
 function renderHomeWelcome(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
@@ -60,6 +86,12 @@ function renderHomeWelcome(containerId) {
   }
 }
 
+/**
+ * Bloqueia o acesso de páginas que exigem autenticação
+ * Exibe mensagem de acesso restrito caso o usuário não esteja logado
+ * @param {string} [message] - Mensagem customizada de bloqueio
+ * @returns {boolean} - true se houver usuário logado, false caso contrário
+ */
 function requireLogin(message) {
   const user = getUsuarioLogado();
   if (user) {
