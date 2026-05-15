@@ -7,6 +7,8 @@
 
 // Aguarda o carregamento completo do DOM antes de executar o código
 document.addEventListener("DOMContentLoaded", () => {
+  if (!requireLogin()) return;
+  renderLoginStatus();
   // Inicializa o mapa Leaflet centrado em Caratinga-MG com zoom nível 13
   // Coordenadas aproximadas do centro de Caratinga
   const map = L.map('map').setView([-19.7907, -42.1392], 13);

@@ -28,8 +28,13 @@
     <!-- Seção de boas-vindas e chamada para ação -->
     <section class="welcome">
       <h2>Olá, Usuário!</h2>
-      <p>Crie sua conta para acessar todas as aplicações do novo STP-UBS.</p>
-      <a href="criarConta.html" class="login-btn">Criar conta</a>
+      <p>Crie sua conta ou entre para acessar todas as aplicações do novo STP-UBS.</p>
+      <div id="homeLoginArea">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="criarConta.html" class="login-btn">Criar conta</a>
+          <a href="login.html" class="login-btn">Entrar</a>
+        </div>
+      </div>
     </section>
 
     <!-- Seção de cartões para acessar cada funcionalidade -->
@@ -67,5 +72,11 @@
     </section>
 
   </main>
+  <script src="auth.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      renderHomeWelcome("homeLoginArea");
+    });
+  </script>
 </body>
 </html>

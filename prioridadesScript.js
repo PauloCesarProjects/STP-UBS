@@ -44,6 +44,8 @@ function iconePrioridade(cor) {
  * Carrega dados do localStorage, ordena por prioridade e cria elementos interativos
  */
 document.addEventListener("DOMContentLoaded", () => {
+  if (!requireLogin()) return;
+  renderLoginStatus();
   // Carrega lista de pacientes do armazenamento local do navegador
   let pacientes = JSON.parse(localStorage.getItem("prioridades")) || [];
 

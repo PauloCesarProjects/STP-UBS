@@ -178,6 +178,44 @@ h2 {
   font-weight: 500;
 }
 
+.message-box {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-left: 6px solid transparent;
+  line-height: 1.5;
+}
+
+.message-box.info {
+  background: #e8f3ff;
+  color: #1a3f7c;
+  border-color: #0d47a1;
+}
+
+.message-box.success {
+  background: #e8f7ed;
+  color: #1f5e2f;
+  border-color: #2e7d32;
+}
+
+.message-box.error {
+  background: #fff0f1;
+  color: #7f1d1d;
+  border-color: #c62828;
+}
+
+.auth-banner {
+  display: none;
+  margin-bottom: 20px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #004aad, #007bff);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
 #listaPacientes li {
       cursor: pointer;
       padding: 10px;

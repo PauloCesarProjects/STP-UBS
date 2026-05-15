@@ -9,12 +9,23 @@
  * Executa validação, geocodificação e persistência dos dados
  * @param {Event} e - Evento de submissão do formulário
  */
-document.querySelector(".signup-form").addEventListener("submit", function(e) {
-  // Previne o comportamento padrão do formulário (recarregamento da página)
-  // Permite processamento personalizado dos dados
-  e.preventDefault();
+if (!requireLogin()) {
+  // O conteúdo da página é bloqueado por auth.js
+} else {
+  renderLoginStatus();
+  const messageBox = document.getElementById("messageBox");
+  document.querySelector(".signup-form").addEventListener("submit", function(e) {
+    // Previne o comportamento padrão do formulário (recarregamento da página)
+    // Permite processamento personalizado dos dados
+    e.preventDefault();
+    clearMessage("messageBox");
 
-  // Captura o valor do campo de endereço para geocodificação
+    const cpf = document.getElementById("cpf").value.trim();
+    if (!isValidCPF(cpf)) {
+      return showMessage("messageBox", "CPF inválido. Verifique os dígitos e tente novamente.", "error");
+    }
+
+    // Captura o valor do campo de endereço para geocodificação
   const endereco = document.getElementById("endereco").value;
 
   // ===================================================================================
@@ -97,6 +108,28 @@ document.querySelector(".signup-form").addEventListener("submit", function(e) {
 
       // Feedback ao usuário sobre falha na geocodificação
       // Paciente é cadastrado mesmo sem localização no mapa
-      alert("Paciente cadastrado, mas não foi possível localizar o endereço no mapa.");
+      showMessage("messageBox", "Paciente cadastrado, mas não foi possível localizar o endereço no mapa.", "error");
     });
-});
+  });
+}
+
+function isValidCPF(cpf) {
+  if (!cpf) return false;
+  cpf = cpf.replace(/\D/g, "");
+  if (cpf.length !== 11) return false;
+  if (/^(\d)\1{10}$/.test(cpf)) return false;
+
+  const calcularDigito = (base) => {
+    let soma = 0;
+    for (let i = 0; i < base.length; i++) {
+      soma += parseInt(base.charAt(i), 10) * (base.length + 1 - i);
+    }
+    const resto = (soma * 10) % 11;
+    return resto === 10 ? 0 : resto;
+  };
+
+  const digito1 = calcularDigito(cpf.substring(0, 9));
+  const digito2 = calcularDigito(cpf.substring(0, 10));
+
+  return digito1 === parseInt(cpf.charAt(9), 10) && digito2 === parseInt(cpf.charAt(10), 10);
+}

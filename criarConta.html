@@ -18,7 +18,7 @@
   <aside class="sidebar">
     <ul>
       <li><a href="index.html"><img src="icones/inicio.jpeg" alt="Ícone Início" class="icon"> Início</a></li>
-      <li><a href="criar-conta.html" class="active"><img src="icones/sobre.jpeg" alt="Ícone Crie uma Conta" class="icon"> Crie uma Conta</a></li>
+      <li><a href="criarConta.html" class="active"><img src="icones/sobre.jpeg" alt="Ícone Crie uma Conta" class="icon"> Crie uma Conta</a></li>
     </ul>
   </aside>
 
@@ -27,6 +27,7 @@
     <section class="content">
       <h2>Crie uma Conta</h2>
       <p>Preencha os dados abaixo para criar sua conta no STP-UBS.</p>
+      <div id="messageBox"></div>
 
       <!-- Formulário de criação de conta -->
       <form class="signup-form">
@@ -49,7 +50,10 @@
         <!-- Botão de envio do formulário -->
         <button type="submit" class="login-btn">Criar Conta</button>
       </form>
+      <p style="margin-top: 16px;">Já tem conta? <a href="login.html">Faça login</a>.</p>
     </section>
   </main>
+<script src="auth.js"></script>
+  <script src="contaScript.js"></script>
 </body>
 </html>
