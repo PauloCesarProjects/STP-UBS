@@ -4,6 +4,7 @@
  */
 const suporteForm = document.querySelector(".contact-form");
 
+// Captura o envio do formulário de suporte e abre o cliente de e-mail
 if (suporteForm) {
   suporteForm.addEventListener("submit", function (e) {
     e.preventDefault();

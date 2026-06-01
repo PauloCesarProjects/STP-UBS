@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Página inicial do STP-UBS com navegação e acesso ao sistema -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -8,15 +9,15 @@
 <body>
   <header>
     <div class="header-top">
-      <img src="ICONES/LOGO.png" class="logo-img" alt="STP-UBS">
+      <img src="icones/LOGO.png" class="logo-img" alt="STP-UBS">
     </div>
     <nav>
-      <a href="index.html" class="active"><img src="ICONES/INICIO.png" class="icon" alt=""><span>Início</span></a>
-      <a href="adicionarpaciente.html"><img src="ICONES/ADICIONAP.png" class="icon" alt=""><span>Adicionar</span></a>
-      <a href="prioridades.html"><img src="ICONES/PREFERENCIA.png" class="icon" alt=""><span>Prioridades</span></a>
-      <a href="mapaPrioridade.html"><img src="ICONES/MAPA.png" class="icon" alt=""><span>Mapa</span></a>
-      <a href="fale.html"><img src="ICONES/SUPORTE.png" class="icon" alt=""><span>Suporte</span></a>
-      <a href="sobre.html"><img src="ICONES/SOBRE.png" class="icon" alt=""><span>Sobre</span></a>
+      <a href="index.html" class="active"><img src="icones/INICIO.png" class="icon" alt=""><span>Início</span></a>
+      <a href="adicionarpaciente.html"><img src="icones/ADICIONAP.png" class="icon" alt=""><span>Adicionar</span></a>
+      <a href="prioridades.html"><img src="icones/PREFERENCIA.png" class="icon" alt=""><span>Prioridades</span></a>
+      <a href="mapaPrioridade.html"><img src="icones/MAPA.png" class="icon" alt=""><span>Mapa</span></a>
+      <a href="fale.html"><img src="icones/SUPORTE.png" class="icon" alt=""><span>Suporte</span></a>
+      <a href="sobre.html"><img src="icones/SOBRE.png" class="icon" alt=""><span>Sobre</span></a>
     </nav>
   </header>
 
@@ -29,7 +30,7 @@
         Coloca a imagem na pasta do projeto e troca o src abaixo.
         Exemplo: <img src="fotos/banner.jpg" class="hero-img" alt="Banner">
       -->
-      <img src="ICONES/IMAGEMINICIO.avif" class="hero-img" alt="Banner STP-UBS">
+      <img src="icones/IMAGEMINICIO.avif" class="hero-img" alt="Banner STP-UBS">
       <div class="hero-texto">
         <h1>Sistema de Triagem Preventiva</h1>
         <p>Organizando e priorizando o atendimento nas Unidades Básicas de Saúde</p>
@@ -46,23 +47,23 @@
     <!-- CARDS DE NAVEGAÇÃO -->
     <section class="apps">
       <a class="card" href="adicionarpaciente.html">
-        <img src="ICONES/ADICIONAP.png" alt="Adicionar paciente" class="icon">
+        <img src="icones/ADICIONAP.png" alt="Adicionar paciente" class="icon">
         <span>Adicionar paciente</span>
       </a>
       <a class="card" href="prioridades.html">
-        <img src="ICONES/PREFERENCIA.png" alt="Prioridades" class="icon">
+        <img src="icones/PREFERENCIA.png" alt="Prioridades" class="icon">
         <span>Prioridades</span>
       </a>
       <a class="card" href="mapaPrioridade.html">
-        <img src="ICONES/MAPA.png" alt="Mapa de prioridades" class="icon">
+        <img src="icones/MAPA.png" alt="Mapa de prioridades" class="icon">
         <span>Mapa de prioridades</span>
       </a>
       <a href="fale.html" class="card">
-        <img src="ICONES/SUPORTE.png" alt="Fale com o STP-UBS" class="icon">
+        <img src="icones/SUPORTE.png" alt="Fale com o STP-UBS" class="icon">
         <span>Fale com o STP-UBS</span>
       </a>
       <a href="sobre.html" class="card">
-        <img src="ICONES/SOBRE.png" alt="Sobre o STP-UBS" class="icon">
+        <img src="icones/SOBRE.png" alt="Sobre o STP-UBS" class="icon">
         <span>Sobre o STP-UBS</span>
       </a>
     </section>
@@ -77,9 +78,11 @@
 
   <script src="auth.js"></script>
   <script>
+    // Aguarda a página carregar e mostra o painel de login/boas-vindas
     window.addEventListener("DOMContentLoaded", () => {
       renderHomeWelcome("homeLoginArea");
     });
   </script>
 </body>
 </html>
+

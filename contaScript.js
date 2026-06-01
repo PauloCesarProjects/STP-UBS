@@ -5,6 +5,7 @@
 const contaForm = document.querySelector(".signup-form");
 const messageBox = document.getElementById("messageBox");
 
+// Verifica se já existe usuário logado e, se sim, bloqueia o cadastro
 document.addEventListener("DOMContentLoaded", () => {
   const usuario = getUsuarioLogado();
   if (usuario) {
