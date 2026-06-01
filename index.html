@@ -1,77 +1,80 @@
 <!DOCTYPE html>
-<!-- Declara o tipo de documento HTML5 -->
 <html lang="pt-BR">
 <head>
-  <!-- Metadados da página -->
   <meta charset="UTF-8">
   <title>STP-UBS</title>
-  <!-- Link para o arquivo de estilo CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Cabeçalho com logo / título do sistema -->
-  <header class="header"  >
-    <div class="logo">STP-UBS</div>
+  <header>
+    <div class="header-top">
+      <img src="ICONES/LOGO.png" class="logo-img" alt="STP-UBS">
+    </div>
+    <nav>
+      <a href="index.html" class="active"><img src="ICONES/INICIO.png" class="icon" alt=""><span>Início</span></a>
+      <a href="adicionarpaciente.html"><img src="ICONES/ADICIONAP.png" class="icon" alt=""><span>Adicionar</span></a>
+      <a href="prioridades.html"><img src="ICONES/PREFERENCIA.png" class="icon" alt=""><span>Prioridades</span></a>
+      <a href="mapaPrioridade.html"><img src="ICONES/MAPA.png" class="icon" alt=""><span>Mapa</span></a>
+      <a href="fale.html"><img src="ICONES/SUPORTE.png" class="icon" alt=""><span>Suporte</span></a>
+      <a href="sobre.html"><img src="ICONES/SOBRE.png" class="icon" alt=""><span>Sobre</span></a>
+    </nav>
   </header>
 
-  <!-- Barra lateral de navegação -->
-  <aside class="sidebar">
-    <ul>
-      <li>
-        <a href="index.html" class="active">🏠 Início</a>
-      </li>
-    </ul>
-  </aside>
-
-  <!-- Conteúdo principal da página -->
   <main>
-    <!-- Seção de boas-vindas e chamada para ação -->
-    <section class="welcome">
-      <h2>Olá, Usuário!</h2>
-      <p>Crie sua conta ou entre para acessar todas as aplicações do novo STP-UBS.</p>
-      <div id="homeLoginArea">
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="criarConta.html" class="login-btn">Criar conta</a>
-          <a href="login.html" class="login-btn">Entrar</a>
-        </div>
+
+    <!-- BANNER HERO — colega coloca a foto aqui -->
+    <section class="hero">
+      <!-- 
+        PARA ADICIONAR FOTO:
+        Coloca a imagem na pasta do projeto e troca o src abaixo.
+        Exemplo: <img src="fotos/banner.jpg" class="hero-img" alt="Banner">
+      -->
+      <img src="ICONES/IMAGEMINICIO.avif" class="hero-img" alt="Banner STP-UBS">
+      <div class="hero-texto">
+        <h1>Sistema de Triagem Preventiva</h1>
+        <p>Organizando e priorizando o atendimento nas Unidades Básicas de Saúde</p>
       </div>
     </section>
 
-    <!-- Seção de cartões para acessar cada funcionalidade -->
+    <!-- ÁREA DE LOGIN / BOAS-VINDAS -->
+    <section class="welcome">
+      <h2>Olá, Usuário!</h2>
+      <p>Crie sua conta ou entre para acessar todas as aplicações do novo STP-UBS.</p>
+      <div id="homeLoginArea"></div>
+    </section>
+
+    <!-- CARDS DE NAVEGAÇÃO -->
     <section class="apps">
-      <!-- Cartão 1: adicionar paciente -->
       <a class="card" href="adicionarpaciente.html">
-        <img src="icones/adicionarP.jpeg" alt="Adicionar paciente" class="icon" width="64px" height="64px">
+        <img src="ICONES/ADICIONAP.png" alt="Adicionar paciente" class="icon">
         <span>Adicionar paciente</span>
       </a>
-
-
-        <!-- Cartão 2: prioridades -->
       <a class="card" href="prioridades.html">
-        <img src="icones/preferencia.jpeg" alt="Prioridades" class="icon" width="64px" height="64px">
+        <img src="ICONES/PREFERENCIA.png" alt="Prioridades" class="icon">
         <span>Prioridades</span>
       </a>
-
-      <!-- Cartão 3: mapa de prioridades -->
       <a class="card" href="mapaPrioridade.html">
-        <img src="icones/mapa.jpeg" alt="Mapa de prioridades" class="icon" width="64px" height="64px">
+        <img src="ICONES/MAPA.png" alt="Mapa de prioridades" class="icon">
         <span>Mapa de prioridades</span>
       </a>
-
-      <!-- Cartão 4: fale com o STP-UBS -->
       <a href="fale.html" class="card">
-        <img src="icones/suporte.jpeg" alt="Fale com o STP-UBS" class="icon" width="64px" height="64px">
+        <img src="ICONES/SUPORTE.png" alt="Fale com o STP-UBS" class="icon">
         <span>Fale com o STP-UBS</span>
       </a>
-
-      <!-- Cartão 5: página sobre o sistema -->
       <a href="sobre.html" class="card">
-        <img src="icones/sobre.jpeg" alt="Sobre o STP-UBS" class="icon" width="64px" height="64px">
+        <img src="ICONES/SOBRE.png" alt="Sobre o STP-UBS" class="icon">
         <span>Sobre o STP-UBS</span>
       </a>
     </section>
 
   </main>
+
+  <footer>
+    <strong>STP-UBS</strong>
+    <p>Sistema de Triagem Preventiva para Unidades Básicas de Saúde</p>
+    <p>Desenvolvido para apoiar profissionais da saúde pública</p>
+  </footer>
+
   <script src="auth.js"></script>
   <script>
     window.addEventListener("DOMContentLoaded", () => {

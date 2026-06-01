@@ -14,23 +14,20 @@
 </head>
 <body>
   <!-- Cabeçalho com o título do sistema -->
-  <header>
-    <div class="logo">STP-UBS</div>
-  </header>
-
-  <!-- Menu lateral para navegação entre páginas -->
-  <aside class="sidebar">
-    <ul>
-      <li><a href="index.html">🏠 Início</a></li>
-      <li><a href="adicionarpaciente.html">👤 Adicionar Paciente</a></li>
-      <li><a href="prioridades.html" class="active">🏥 Prioridades</a></li>
-      <li><a href="mapaPrioridade.html">🗺️ Mapa de Calor</a></li>
-      <li><a href="fale.html">💬 Fale com STP-UBS</a></li>
-      <li><a href="sobre.html">ℹ️ Sobre o SUS</a></li>
-    </ul>
-  </aside>
-
-  <!-- Conteúdo principal da página de prioridades -->
+  
+<header>
+  <div class="header-top">
+    <img src="ICONES/LOGO.png" class="logo-img" alt="STP-UBS">
+  </div>
+  <nav>
+    <a href="index.html"><img src="ICONES/INICIO.png" class="icon" alt=""><span>Início</span></a>
+    <a href="adicionarpaciente.html"><img src="ICONES/ADICIONAP.png" class="icon" alt=""><span>Adicionar</span></a>
+    <a href="prioridades.html"><img src="ICONES/PREFERENCIA.png" class="icon" alt=""><span>Prioridades</span></a>
+    <a href="mapaPrioridade.html"><img src="ICONES/MAPA.png" class="icon" alt=""><span>Mapa</span></a>
+    <a href="fale.html"><img src="ICONES/SUPORTE.png" class="icon" alt=""><span>Suporte</span></a>
+    <a href="sobre.html"><img src="ICONES/SOBRE.png" class="icon" alt=""><span>Sobre</span></a>
+  </nav>
+</header>
   <main>
     <section class="content">
       <div id="authBanner" class="auth-banner"></div>
@@ -48,5 +45,11 @@
   <!-- Script que controla a lista de pacientes e fichas -->
   <script src="auth.js"></script>
   <script src="prioridadesScript.js"></script>
+
+  <footer>
+  <strong>STP-UBS</strong>
+  <p>Sistema de Triagem Preventiva para Unidades Básicas de Saúde</p>
+</footer>
+
 </body>
 </html>
