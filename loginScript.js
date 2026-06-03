@@ -7,6 +7,10 @@
 const loginForm = document.querySelector(".login-form");
 const messageBox = document.getElementById("messageBox");
 
+function normalizeLoginValue(value) {
+  return value.trim().toLowerCase().replace(/\s+/g, "").replace(/\//g, "");
+}
+
 // Se já houver usuário logado, exibe a mensagem e esconde o formulário
 document.addEventListener("DOMContentLoaded", () => {
   const usuario = getUsuarioLogado();
@@ -25,24 +29,31 @@ if (loginForm) {
     // Limpa mensagens anteriores antes de validar novamente
     clearMessage("messageBox");
 
-    // Captura valores dos campos de e-mail e senha
-    const email = document.getElementById("email").value.trim();
+    // Captura valores dos campos de login (e-mail ou CRM/COREM) e senha
+    const loginInput = document.getElementById("email").value.trim();
     const senha = document.getElementById("senha").value;
 
     // Verifica se o usuário preencheu ambos os campos
-    if (!email || !senha) {
-      return showMessage("messageBox", "Preencha e-mail e senha para entrar.", "error");
+    if (!loginInput || !senha) {
+      return showMessage("messageBox", "Preencha e-mail/CRM e senha para entrar.", "error");
     }
 
     // Busca a lista de contas registradas no localStorage
     const usuarios = JSON.parse(localStorage.getItem("usuariosSTP")) || [];
+    const normalizedLogin = normalizeLoginValue(loginInput);
 
-    // Procura a conta que tenha o mesmo e-mail informado
-    const usuario = usuarios.find(u => u.email.toLowerCase() === email.toLowerCase());
+    // Procura a conta que tenha o mesmo e-mail ou registro profissional informado
+    const usuario = usuarios.find(u => {
+      const emailMatch = u.email && u.email.toLowerCase() === loginInput.toLowerCase();
+      const registroValorMatch = u.registroValor && normalizeLoginValue(u.registroValor) === normalizedLogin;
+      const registroTipoValorMatch = u.registroTipo && u.registroValor && normalizeLoginValue(`${u.registroTipo}${u.registroValor}`) === normalizedLogin;
+      const registroOriginalMatch = u.registroOriginal && normalizeLoginValue(u.registroOriginal) === normalizedLogin;
+      return emailMatch || registroValorMatch || registroTipoValorMatch || registroOriginalMatch;
+    });
 
-    // Se não existir conta com o e-mail informado, mostra erro
+    // Se não existir conta correspondente, mostra erro
     if (!usuario) {
-      return showMessage("messageBox", "Usuário não encontrado. Verifique seu e-mail ou crie uma conta.", "error");
+      return showMessage("messageBox", "Usuário não encontrado. Verifique seu e-mail, CRM/COREM ou crie uma conta.", "error");
     }
 
     // Verifica se a senha informada confere com a conta encontrada
