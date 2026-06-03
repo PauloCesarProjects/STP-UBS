@@ -110,3 +110,60 @@ function requireLogin(message) {
   }
   return false;
 }
+
+/**
+ * Inicializa usuários padrão no primeiro carregamento do sistema
+ * Cria usuário administrativo se a lista estiver vazia
+ */
+function initializeDefaultUsers() {
+  try {
+    // Verifica se já existe dados
+    const usuariosExistentes = localStorage.getItem("usuariosSTP");
+    
+    // Se já existem usuários, não sobrescreve
+    if (usuariosExistentes) {
+      try {
+        const parsed = JSON.parse(usuariosExistentes);
+        if (parsed && Array.isArray(parsed) && parsed.length > 0) {
+          return;
+        }
+      } catch (e) {
+        // Se houver erro ao parsear, continua e recria
+      }
+    }
+    
+    // Define usuário administrativo padrão
+    const usuarios = [
+      {
+        nome: "Eduardo",
+        email: "EduardoADM@gmail.com",
+        senha: "adm232323",
+        registroTipo: "CRM",
+        registroValor: "123456",
+        registroOriginal: "CRM/MG 123456",
+        criadoEm: new Date().toISOString()
+      }
+    ];
+    
+    // Salva no localStorage
+    localStorage.setItem("usuariosSTP", JSON.stringify(usuarios));
+    
+    // Log de confirmação
+    const verificacao = localStorage.getItem("usuariosSTP");
+    if (verificacao) {
+      console.log("✅ Usuário padrão inicializado com sucesso!");
+      console.log("📧 Email: EduardoADM@gmail.com");
+      console.log("🔑 Senha: adm232323");
+    }
+  } catch (err) {
+    console.error("⚠️ Erro ao inicializar usuário padrão:", err);
+  }
+}
+
+// Executa IMEDIATAMENTE quando o script carrega
+initializeDefaultUsers();
+
+// Também tenta no DOMContentLoaded como backup
+if (document.readyState === 'loading') {
+  document.addEventListener("DOMContentLoaded", initializeDefaultUsers);
+}
